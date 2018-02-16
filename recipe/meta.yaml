@@ -28,7 +28,7 @@ requirements:
 test:
   imports:
     - qgrid
-    - qgrid.tests
+#    - qgrid.tests
 
 about:
   home: https://github.com/quantopian/qgrid
