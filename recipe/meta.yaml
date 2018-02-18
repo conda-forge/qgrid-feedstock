@@ -11,13 +11,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
     - notebook >=4.0.0
   run:
     - python
@@ -28,6 +28,7 @@ requirements:
 test:
   imports:
     - qgrid
+#    - qgrid.tests
 
 about:
   home: https://github.com/quantopian/qgrid
@@ -46,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - TimShawver
+    - alen12345
