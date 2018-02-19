@@ -1,5 +1,5 @@
-{% set version = "1.0.0" %}
-{% set sha256 = "e885cd1b2138720850c0da1146f06d69343cd2fdab10bb9ce3337fb23adaebeb" %}
+{% set version = "1.0.1" %}
+{% set sha256 = "d1f931c09aa56dcd3923cc4a4ff2aaadf5a17ee1a91a22473ae6fdb89aaa143c" %}
 
 package:
   name: qgrid
@@ -28,7 +28,7 @@ requirements:
 test:
   imports:
     - qgrid
-#    - qgrid.tests
+    - qgrid.tests
 
 about:
   home: https://github.com/quantopian/qgrid
