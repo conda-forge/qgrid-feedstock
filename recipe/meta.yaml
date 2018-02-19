@@ -27,6 +27,8 @@ requirements:
     - ipywidgets >=7.0.0
 
 test:
+  requires:
+    - pytest
   imports:
     - qgrid
     - qgrid.tests
