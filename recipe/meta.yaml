@@ -13,6 +13,7 @@ source:
 build:
   number: 2
   noarch: python
+  # disable if already installed
   script: (jupyter-nbextension disable qgrid --py --sys-prefix || true) && python -m pip install --no-deps --ignore-installed . && jupyter-nbextension enable qgrid --py --sys-prefix
 
 requirements:
@@ -35,8 +36,10 @@ test:
     - qgrid
     - qgrid.tests
     - pytest
-#  commands:
-#    - pytest
+  source_files:
+    - qgrid/tests
+  commands:
+    - pytest
 
 about:
   home: https://github.com/quantopian/qgrid
