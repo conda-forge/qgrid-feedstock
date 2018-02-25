@@ -13,7 +13,7 @@ source:
 build:
   number: 2
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed . && jupyter-nbextension enable qgrid --py --sys-prefix
+  script: jupyter-nbextension disable qgrid --py --sys-prefix && python -m pip install --no-deps --ignore-installed . && jupyter-nbextension enable qgrid --py --sys-prefix
 
 requirements:
   build:
