@@ -1,5 +1,5 @@
-{% set version = "1.0.1" %}
-{% set sha256 = "d1f931c09aa56dcd3923cc4a4ff2aaadf5a17ee1a91a22473ae6fdb89aaa143c" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "987d2cf95b1d623cc498bf92fcdf7fa03261d124a0b1a9a68b97f3ea524cb42c" %}
 
 package:
   name: qgrid
@@ -11,14 +11,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 2
+  noarch: python
+  # disable if already installed
+  script: (jupyter-nbextension disable qgrid --py --sys-prefix || true) && python -m pip install --no-deps --ignore-installed . && jupyter-nbextension enable qgrid --py --sys-prefix
 
 requirements:
   build:
     - python
     - pip
     - notebook >=4.0.0
+    - pandas >=0.17.0
+    - ipywidgets >=7.0.0
   run:
     - python
     - notebook >=4.0.0
@@ -26,9 +30,16 @@ requirements:
     - ipywidgets >=7.0.0
 
 test:
+  requires:
+    - pytest
   imports:
     - qgrid
     - qgrid.tests
+    - pytest
+  source_files:
+    - qgrid/tests
+  commands:
+    - pytest
 
 about:
   home: https://github.com/quantopian/qgrid
