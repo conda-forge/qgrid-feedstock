@@ -1,5 +1,5 @@
-{% set version = "1.0.4" %}
-{% set sha256 = "bb27692cca7bce5b092ca02a6b0de82144c459399c2774021cd63c19834e81de" %}
+{% set version = "1.0.5" %}
+{% set sha256 = "1f8b1733a2367825245a61df90f0124b3a3ddba7e2225b5f8b724fd0333fbcae" %}
 
 package:
   name: qgrid
