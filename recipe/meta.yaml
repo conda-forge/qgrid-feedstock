@@ -1,5 +1,5 @@
-{% set version = "1.0.5" %}
-{% set sha256 = "1f8b1733a2367825245a61df90f0124b3a3ddba7e2225b5f8b724fd0333fbcae" %}
+{% set version = "1.1.0" %}
+{% set sha256 = "eb39cde387e2b5cda3395efa216328894c46e3a09b607e4beb28407010a42b24" %}
 
 package:
   name: qgrid
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
