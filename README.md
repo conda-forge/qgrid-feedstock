@@ -291,4 +291,5 @@ Feedstock Maintainers
 
 * [@TimShawver](https://github.com/TimShawver/)
 * [@alen12345](https://github.com/alen12345/)
+* [@xhochy](https://github.com/xhochy/)
 
