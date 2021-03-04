@@ -1,26 +1,25 @@
 {% set version = "1.3.1" %}
-{% set sha256 = "fe8af5b50833084dc0b6a265cd1ac7b837c03c0f8521150163560dce778d711c" %}
 
 package:
   name: qgrid
   version: {{ version }}
 
 source:
-  fn: qgrid-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/q/qgrid/qgrid-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: fe8af5b50833084dc0b6a265cd1ac7b837c03c0f8521150163560dce778d711c
 
 build:
-  number: 2
+  noarch: python
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - pip
     - notebook >=4.0.0
   run:
-    - python
+    - python >=2.7
     - notebook >=4.0.0
     - pandas >=0.17.0
     - ipywidgets >=7.0.0
