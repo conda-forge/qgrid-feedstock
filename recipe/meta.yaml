@@ -10,16 +10,18 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - python >=2.7
     - pip
+    - nbclassic >=0.4.4
     - notebook >=4.0.0
   run:
     - python >=2.7
+    - nbclassic >=0.4.4
     - notebook >=4.0.0
     - pandas >=0.17.0
     - ipywidgets >=7.0.0
