@@ -24,7 +24,7 @@ requirements:
     - nbclassic >=0.4.4
     - notebook >=4.0.0
     - pandas >=0.17.0
-    - ipywidgets >=7.0.0
+    - ipywidgets >=7.0.0,<8
 
 test:
   imports:
