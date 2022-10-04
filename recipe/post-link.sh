@@ -1,1 +1,2 @@
-jupyter nbclassic-extension enable qgrid --py --sys-prefix
+# "${PREFIX}/bin/jupyter-nbclassic-extension" enable qgrid --py --sys-prefix > /dev/null 2>&1
+"${PREFIX}/bin/jupyter-nbclassic-extension" enable qgrid --py --sys-prefix
