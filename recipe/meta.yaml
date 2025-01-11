@@ -5,28 +5,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/q/qgrid/qgrid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/q/qgrid/qgrid-{{ version }}.tar.gz
   sha256: fe8af5b50833084dc0b6a265cd1ac7b837c03c0f8521150163560dce778d711c
 
 build:
   noarch: python
-  number: 4
+  number: 5
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=2.7
+    - python {{ python_min }}
     - pip
     - nbclassic >=0.4.4
     - notebook >=4.0.0
   run:
-    - python >=2.7
+    - python >={{ python_min }}
     - nbclassic >=0.4.4
     - notebook >=4.0.0
     - pandas >=0.17.0
     - ipywidgets >=7.0.0,<8
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - qgrid
     - qgrid.tests
